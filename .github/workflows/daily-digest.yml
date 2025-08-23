@@ -19,11 +19,11 @@ jobs:
       - name: Install dependencies
         run: |
           npm init -y
-          npm install @supabase/supabase-js luxon @sendgrid/mail
+          npm install @supabase/supabase-js luxon
           
       - name: Run daily digest
         run: node scripts/daily-digest.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
