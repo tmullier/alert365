@@ -1,7 +1,9 @@
 name: Alert365 Daily Digest
 
 on:
-  workflow_dispatch:      # Déclenchement manuel uniquement
+  schedule:
+    - cron: '0 16 * * *'  # 18h France = 16h UTC (été)
+  workflow_dispatch:      # + Manuel en backup
 
 jobs:
   send-digest:
